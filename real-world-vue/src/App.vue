@@ -8,19 +8,45 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Home</RouterLink> |
+        <RouterLink to="/about">About</RouterLink>|
+        <RouterLink to="/Student">Student</RouterLink>
       </nav>
     </div>
+   
   </header>
 
   <RouterView />
 </template>
 
 <style scoped>
+#app {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+nav{
+  padding: 30px;
+}
+nav a{
+  font-weight: bold;
+  color: #2c3e50;
+}
+nav a.router-link-exact-active{
+  color: #42b983;
+}
+header{
+  line-height: 1.5;
+  max-height: 100vh;
+}
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -81,5 +107,8 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+h4{
+  font-size: 20px;
 }
 </style>
