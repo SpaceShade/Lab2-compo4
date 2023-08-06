@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import EventListView from '../views/EventListView.vue'
 import AboutViewVue from '@/views/AboutView.vue'
 import StudentListview from '../views/StudentListview.vue'
-
+import EventDetailView from '../views/EventDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +10,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'EventList',
-      component: EventListView
+      component: EventListView,
+      props: (route) => ({page: parseInt(route.query?.page as string || '1') })
     },
     {
       path: '/about',
@@ -21,6 +22,12 @@ const router = createRouter({
       path: '/Student',
       name: 'StudentList',
       component: StudentListview
+    },
+    {
+      path: '/event/:id',
+      name: 'event-detail',
+      component: EventDetailView,
+      props: true
     }
 
   ]
